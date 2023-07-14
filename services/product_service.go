@@ -6,7 +6,7 @@ import (
 	"github.com/taepunphu/go-rest-api-structure/models/features/product/request"
 	"github.com/taepunphu/go-rest-api-structure/models/features/product/response"
 	"github.com/taepunphu/go-rest-api-structure/repositories"
-	utils "github.com/taepunphu/go-rest-api-structure/utils/errors"
+	"github.com/taepunphu/go-rest-api-structure/utils"
 )
 
 type ProductService interface {

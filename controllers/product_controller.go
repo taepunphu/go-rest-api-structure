@@ -8,7 +8,7 @@ import (
 	"github.com/taepunphu/go-rest-api-structure/models/common"
 	"github.com/taepunphu/go-rest-api-structure/models/features/product/request"
 	"github.com/taepunphu/go-rest-api-structure/services"
-	utils "github.com/taepunphu/go-rest-api-structure/utils/errors"
+	"github.com/taepunphu/go-rest-api-structure/utils"
 )
 
 type ProductController struct {

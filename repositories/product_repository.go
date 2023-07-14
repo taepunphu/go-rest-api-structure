@@ -5,7 +5,7 @@ import (
 
 	"github.com/taepunphu/go-rest-api-structure/entities"
 	"github.com/taepunphu/go-rest-api-structure/models/features/product/request"
-	utils "github.com/taepunphu/go-rest-api-structure/utils/errors"
+	"github.com/taepunphu/go-rest-api-structure/utils"
 	"gorm.io/gorm"
 )
 

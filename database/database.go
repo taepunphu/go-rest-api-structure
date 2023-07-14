@@ -16,7 +16,7 @@ const (
 	connMaxIdleTime = 20
 )
 
-func NewPsqlDB(c configs.Config) (*gorm.DB, error) {
+func NewPsqlDB(c *configs.Config) (*gorm.DB, error) {
 	dataSourceName := fmt.Sprintf("host=%s port=%s user=%s dbname=%s sslmode=disable password=%s",
 		c.Postgres.PostgresqlHost,
 		c.Postgres.PostgresqlPort,
