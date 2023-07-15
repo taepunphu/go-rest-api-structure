@@ -30,10 +30,11 @@ func (pr *ProductRepositoryImpl) Delete(productId int) {
 
 // FindAll implements ProductRepository.
 func (pr *ProductRepositoryImpl) FindAll() []entities.ProductEntity {
-	var product []entities.ProductEntity
-	result := pr.Db.Find(&product)
-	utils.ErrorPanic(result.Error)
-	return product
+	var products []entities.ProductEntity
+	//result := pr.Db.Find(&product)
+	result := pr.Db.Raw("select * from tb_ms_products").Scan(&products)
+	utils.ErrorPanic(result.Error)	
+	return products
 }
 
 // FindById implements ProductRepository.

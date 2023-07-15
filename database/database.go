@@ -5,6 +5,7 @@ import (
 	"time"
 
 	"github.com/taepunphu/go-rest-api-structure/configs"
+	"github.com/taepunphu/go-rest-api-structure/entities"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
@@ -43,6 +44,9 @@ func NewPsqlDB(c *configs.Config) (*gorm.DB, error) {
 	if err = sqlDB.Ping(); err != nil {
 		return nil, err
 	}
+    
+	//migaration
+	db.Table("tb_ms_products").AutoMigrate(&entities.ProductEntity{})
 
 	return db, nil
 }

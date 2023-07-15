@@ -6,7 +6,7 @@ server:
 postgres:
   PostgresqlHost: localhost
   PostgresqlPort: 5432
-  PostgresqlUser: guest
-  PostgresqlPassword: guest
-  PostgresqlDbname: pgdb_dev
+  PostgresqlUser: quest
+  PostgresqlPassword: quest
+  PostgresqlDbname: pg_dev
   PostgresqlSslmode: false

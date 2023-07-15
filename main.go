@@ -41,8 +41,6 @@ func main() {
 
 	validate := validator.New()
 
-	//psqlDB.DB().Table("tb_ms_products").AutoMigrate(&entities.ProductEntity)
-
 	// Repository
 	productRepository := repositories.NewProductRepository(psqlDB)
 
@@ -56,10 +54,11 @@ func main() {
 	routes := routes.NewProductRoute(productController)
 
 	server := &http.Server{
-		Addr:    ":4000",
+		Addr:  cfg.Server.Port,
 		Handler: routes,
 	}
 
-	errList := server.ListenAndServe()
-	utils.ErrorPanic(errList)
+	if errListen := server.ListenAndServe(); errListen != nil {
+		log.Err(errListen).Msgf("Error Listen And Serve: %v", errListen)
+    }
 }
